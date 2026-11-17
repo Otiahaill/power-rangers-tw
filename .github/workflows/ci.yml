@@ -21,6 +21,12 @@ jobs:
           distribution: 'temurin'
           cache: gradle
 
+      - name: Set up Android SDK
+        uses: actions/setup-android@v4
+        with:
+          api-level: 33
+          target: google_apis
+
       - name: Accept Android SDK licenses
         run: |
           mkdir -p $ANDROID_HOME/licenses
